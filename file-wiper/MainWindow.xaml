@@ -1,0 +1,16 @@
+﻿<Window x:Class="file_wiper.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:file_wiper"
+        mc:Ignorable="d"
+        Title="Secure Delete" Height="227" Width="244">
+    <Grid Margin="0,0,0,3">
+        <Label HorizontalAlignment="Center" Height="30" FontSize="14" VerticalAlignment="Top" Content="Select file(s) to securely delete"/>
+        <Button x:Name="btnSelectFiles" Content="Select File(s)..." HorizontalAlignment="Center" Margin="0,35,0,0" VerticalAlignment="Top" Width="86" Click="Button_Click"/>
+        <Label x:Name="lbFiles" Content="" HorizontalAlignment="Left" Margin="101,32,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnFunction" Content="Delete Files" HorizontalAlignment="Center" VerticalAlignment="Center" Height="32" Width="150" Click="btnFunction_Click" IsEnabled="False"/>
+        <Button x:Name="btnTest" Content="Button" HorizontalAlignment="Left" Margin="101,159,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
