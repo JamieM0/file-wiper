@@ -5,12 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:file_wiper"
         mc:Ignorable="d"
-        Title="Secure Delete" Height="227" Width="244">
+        Title="Secure Delete" Height="304" Width="307">
     <Grid Margin="0,0,0,3">
-        <Label HorizontalAlignment="Center" Height="30" FontSize="14" VerticalAlignment="Top" Content="Select file(s) to securely delete"/>
-        <Button x:Name="btnSelectFiles" Content="Select File(s)..." HorizontalAlignment="Center" Margin="0,35,0,0" VerticalAlignment="Top" Width="86" Click="Button_Click"/>
-        <Label x:Name="lbFiles" Content="" HorizontalAlignment="Left" Margin="101,32,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnFunction" Content="Delete Files" HorizontalAlignment="Center" VerticalAlignment="Center" Height="32" Width="150" Click="btnFunction_Click" IsEnabled="False"/>
-        <Button x:Name="btnTest" Content="Button" HorizontalAlignment="Left" Margin="101,159,0,0" VerticalAlignment="Top"/>
+        <Label HorizontalAlignment="Center" Height="30" FontSize="14" VerticalAlignment="Top" Content="Select file(s) to securely delete" Margin="0,35,0,0"/>
+        <Button x:Name="btnSelectFiles" Content="Select File(s)..." HorizontalAlignment="Center" Margin="0,70,0,0" VerticalAlignment="Top" Width="136" Click="Button_Click" Height="25"/>
+        <Label x:Name="lbFiles" Content="" HorizontalAlignment="Left" Margin="35,117,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnFunction" Content="Delete Files" HorizontalAlignment="Center" VerticalAlignment="Top" Height="50" Width="173" Click="btnFunction_Click" IsEnabled="False" Margin="0,195,0,0" FontSize="16"/>
+        <Label x:Name="lbTitle" Content="File Wiper" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="16" Margin="0,4,0,0"/>
+        <Button x:Name="btnSelectDirectory" Content="Select Directory..." HorizontalAlignment="Center" Margin="0,105,0,0" VerticalAlignment="Top" Width="136" Click="SelectDirectory_Click" Height="25"/>
     </Grid>
 </Window>

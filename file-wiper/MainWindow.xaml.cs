@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.IO;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -36,6 +37,9 @@ namespace file_wiper
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            btnFunction.Content = "Delete files";
+            btnFunction.IsEnabled = false;
+            files.Clear();
             //Open file dialog to select multiple files
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
             dlg.Multiselect = true;
@@ -50,10 +54,32 @@ namespace file_wiper
                 {
                     files.Add(filename);
                 }
+                btnFunction.Content = "Delete " + files.Count + " files";
+                btnFunction.IsEnabled = true;
             }
+        }
 
-            btnFunction.Content = "Delete " + files.Count + " files";
-            btnFunction.IsEnabled = true;
+        private void SelectDirectory_Click(object sender, RoutedEventArgs e)
+        {
+            btnFunction.Content = "Delete files";
+            btnFunction.IsEnabled = false;
+            files.Clear();
+            //Open folder dialog to select a directory
+            Microsoft.Win32.OpenFolderDialog dlg = new Microsoft.Win32.OpenFolderDialog();
+            Nullable<bool> result = dlg.ShowDialog();
+            if (result == true)
+            {
+                //Get the selected directory
+                string folder = dlg.FolderName;
+                //Display the selected directory in a listbox
+                string[] filenames = Directory.GetFiles(folder);
+                foreach (string filename in filenames)
+                {
+                    files.Add(filename);
+                }
+                btnFunction.Content = "Delete " + files.Count + " files";
+                btnFunction.IsEnabled = true;
+            }
         }
     }
 }
